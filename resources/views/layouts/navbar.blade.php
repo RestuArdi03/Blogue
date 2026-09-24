@@ -41,16 +41,13 @@
           </div>
           <ul class="p-2 text-sm text-body font-medium" aria-labelledby="user-menu-button">
             <li>
-              <a href="#"
+              <a href="{{ route('profile.edit') }}"
+                class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Profile
+                Loe</a>
+            </li>
+            <li>
+              <a href="{{ route('backend.dashboard') }}"
                 class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
-            </li>
-            <li>
-              <a href="#"
-                class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
-            </li>
-            <li>
-              <a href="#"
-                class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
             </li>
             <li>
               <form method="POST" action="{{ route('logout') }}">
@@ -74,9 +71,6 @@
           </svg>
         </button>
       </div>
-
-
-
     </div>
 
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">

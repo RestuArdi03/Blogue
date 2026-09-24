@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-frontend-layout :title="$title">
   <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
     <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
       <article class="mx-auto w-full max-w-2xl format format-xs sm:format-base lg:format-lg format-blue">
@@ -57,4 +57,4 @@
       </article>
     </div>
   </main>
-</x-layout>
+</x-frontend-layout>

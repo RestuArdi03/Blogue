@@ -10,10 +10,10 @@
 </head>
 
 <body>
-  <x-navbar />
+  <x-sidebar-layout />
 
-  <main class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <main>
+    <div class="p-4 sm:ml-64 mt-3">
       {{ $slot }}
     </div>
   </main>

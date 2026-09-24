@@ -5,7 +5,7 @@ Use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('frontend.home', [
+    return view('frontend.beranda', [
         'title' => 'Home',
     ]);
 })->name('frontend.home');
@@ -25,8 +25,10 @@ Route::get('/contact', function () {
 })->name('frontend.contact');
     
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('backend.dashboard', [
+        'title' => 'Dashboard',
+    ]);
+})->middleware(['auth', 'verified'])->name('backend.dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
