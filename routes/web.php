@@ -29,6 +29,21 @@ Route::get('/dashboard', function () {
         'title' => 'Dashboard',
     ]);
 })->middleware(['auth', 'verified'])->name('backend.dashboard');
+Route::get('/article', function () {
+    return view('backend.article', [
+        'title' => 'article',
+    ]);
+})->middleware(['auth', 'verified'])->name('backend.article');
+Route::get('/inbox', function () {
+    return view('backend.inbox', [
+        'title' => 'Inbox',
+    ]);
+})->middleware(['auth', 'verified'])->name('backend.inbox');
+Route::get('/users', function () {
+    return view('backend.users', [
+        'title' => 'Users',
+    ]);
+})->middleware(['auth', 'verified'])->name('backend.users');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

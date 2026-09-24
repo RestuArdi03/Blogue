@@ -1,11 +1,16 @@
-@props(['active'])
+@props(['href', 'current' => false, 'ariaCurrent' => false])
 
 @php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-hidden focus:border-indigo-700 transition duration-150 ease-in-out'
-            : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-hidden focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out';
+  if ($current) {
+      $classes =
+          'block py-2 px-3 text-white bg-[#12345A] rounded md:bg-transparent md:text-heading md:p-0 md:underline';
+      $ariaCurrent = 'page';
+  } else {
+      $classes =
+          'block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-[#12345A] md:p-0';
+  }
 @endphp
 
-<a {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
+<a href="{{ $href }}" {{ $attributes->merge(['class' => $classes, 'aria-current' => $ariaCurrent]) }}>
+  {{ $slot }}
 </a>

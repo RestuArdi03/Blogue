@@ -41,11 +41,6 @@
           </div>
           <ul class="p-2 text-sm text-body font-medium" aria-labelledby="user-menu-button">
             <li>
-              <a href="{{ route('profile.edit') }}"
-                class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Profile
-                Loe</a>
-            </li>
-            <li>
               <a href="{{ route('backend.dashboard') }}"
                 class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
             </li>
@@ -77,16 +72,16 @@
       <ul
         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
         <li>
-          <x-navlink href="/" :current="request()->is('/')">Beranda</x-navlink>
+          <x-nav-link href="/" :current="request()->is('/')">Beranda</x-nav-link>
         </li>
         <li>
-          <x-navlink href="/articles" :current="request()->is('articles*')">Artikel</x-navlink>
+          <x-nav-link href="/articles" :current="request()->is('articles*')">Artikel</x-nav-link>
         </li>
         <li>
-          <x-navlink href="/about" :current="request()->is('about')">Tentang</x-navlink>
+          <x-nav-link href="/about" :current="request()->is('about')">Tentang</x-nav-link>
         </li>
         <li>
-          <x-navlink href="/contact" :current="request()->is('contact')">Kontak</x-navlink>
+          <x-nav-link href="/contact" :current="request()->is('contact')">Kontak</x-nav-link>
         </li>
       </ul>
     </div>
